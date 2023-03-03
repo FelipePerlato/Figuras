@@ -7,7 +7,7 @@ using Figuras.Classes.Enums;
 
 namespace Figuras.Classes
 {
-    internal abstract class Figura
+    abstract class Figura
     {
         public Color Cor { get; set; }
 

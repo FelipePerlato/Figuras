@@ -1,7 +1,14 @@
-﻿internal class Program
+﻿using Figuras.Classes;
+using Figuras.Classes.Enums;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
+
+        List<Figura> lista = new List<Figura>();
+
+
         Console.WriteLine("Entre com quantidade de figuras ");
         int qtd = int.Parse(Console.ReadLine());
 
@@ -12,7 +19,7 @@
             char op = char.Parse(Console.ReadLine());
 
             Console.WriteLine("Cor (black,blue,red):");
-            string opcor = Console.ReadLine();
+            Color color = Enum.Parse<Color>(Console.ReadLine());
 
             if (op == 'r')
             {
@@ -21,19 +28,24 @@
 
                 Console.Write("Altura: ");
                 double altura = double.Parse(Console.ReadLine());
+
+                lista.Add(new Retangulo(largura, altura, color));
             }
             else
             {
                 Console.Write("Raio: ");
                 double raio = double.Parse(Console.ReadLine());
 
-            }
-
-           
+                lista.Add(new Circulo(raio,color));
 
             }
+        }
 
         Console.WriteLine("Areas: ");
 
+        foreach (Figura figura in lista)
+        {
+            Console.WriteLine(figura.Area());
+        }
     }
     }

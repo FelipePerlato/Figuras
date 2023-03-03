@@ -16,6 +16,7 @@ namespace Figuras.Classes
         {
             Largura = largura;
             Altura = altura;
+       
     
         }
         public override double Area()
